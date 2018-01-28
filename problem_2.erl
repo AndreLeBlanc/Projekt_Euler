@@ -1,3 +1,8 @@
+%Skrivet av André Le Blanc
+%Denna kod är ifrån detta blogginlägg:
+%https://projekteuler.wordpress.com/2018/01/21/project-euler-problem-2/
+
+
 -module(problem_2).
 -export([problem_2/0]).
 
@@ -13,3 +18,4 @@ even_euler(N, N_minus_ett, Tot) when N < 4000000 ->
 	end;
 
 even_euler(_, _, Tot) -> Tot.
+

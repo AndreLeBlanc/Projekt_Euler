@@ -1,3 +1,7 @@
+%Skrivet av André Le Blanc
+%Denna kod är ifrån detta blogginlägg:
+%https://projekteuler.wordpress.com/2018/01/20/problem-1-multiplar-av-3-och-5/
+
 -module(problem_1).
 -export([fiveThree/0]).
 
