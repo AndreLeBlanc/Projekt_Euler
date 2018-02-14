@@ -1,3 +1,7 @@
+%Skrivet av André Le Blanc
+%Denna kod är ifrån detta blogginlägg:
+%projekteuler.wordpress.com/2018/02/14/project-euler-problem-4/
+
 -module(problem_4).
 -export([problem_4/0, problem_4_snabbare/0]).
 
