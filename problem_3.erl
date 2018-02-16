@@ -1,3 +1,7 @@
+%Skrivet av André Le Blanc
+%Denna kod är ifrån detta blogginlägg:
+%https://wordpress.com/post/projekteuler.wordpress.com/26
+
 -module(problem_3).
 -export([problem_3/0]).
 
