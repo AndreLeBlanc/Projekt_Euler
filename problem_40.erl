@@ -11,6 +11,6 @@ problem_40() ->
     Resultat2 = multiply(Digits2, 1),
     io:format("Svaret är ~p och tog ~f sekunder att berakna~n", [Resultat2, timer:now_diff(os:timestamp(), Start2) / 1000000]).
 
-multiply(_, 1000000) -> 1;
+multiply(_, 10000000) -> 1;
 multiply(Digits, Place) ->
     (lists:nth(Place, Digits)-48) * multiply(Digits, Place*10).
