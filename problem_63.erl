@@ -1,4 +1,4 @@
--module(problem_64).
+-module(problem_63).
 -export([problem_63/0]).
 
 problem_63() ->
