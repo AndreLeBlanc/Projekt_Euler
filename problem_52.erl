@@ -3,14 +3,14 @@
 
 problem_52() ->
     Start = os:timestamp(),
-    Res = problem_52_helper(100002),
+    Res = problem_52_helper(100008),
     io:format("Resultatet: ~p och det tog ~p sekunder att beräkna~n", [Res, timer:now_diff(os:timestamp(), Start)/1000000]).
 
 problem_52_helper(A) ->
     A_list = integer_to_list(A),
     IsPerm  = [member(integer_to_list(A*X), A_list) || X <- lists:seq(2, 6)],
     case lists:member(false, IsPerm) of
-	true -> problem_52_helper(A+3);
+	true -> problem_52_helper(A+9);
 	false -> A
     end.	    
 
