@@ -2,7 +2,6 @@ from functools import reduce
 import numpy as np
 import math
 import time
-import collections
 
 def sieve(n):
     flags = np.ones(n, dtype=bool)
@@ -21,13 +20,19 @@ def perms(i, j):
     x = map(int, str(i))
     y = map(int, str(i + j)) 
     z = map(int, str(i + 2*j)) 
-    return collections.Counter(x) == collections.Counter(y) == collections.Counter(z)
+    return sorted(x) == sorted(y) == sorted(z)
     
 def findAns():
-    sieved = sieve(9999)
+    sieved = sieve(9973)
     for i in range(1009, 9973):
         if sieved[i]:
-            for j in range(2, int(5000-0.5*i)):
+            for j in range(2, int(4986-0.5*i)):
                 if sieved[i + j] and sieved[i + 2*j]:
                     if perms(i, j):
                         return reduce(conCat, [i, i + j, i + 2*j])
+
+def main():
+    startTime = time.process_time()
+    ans = findAns()
+    endTime =  time.process_time()
+    print("The answer is", ans, "Time elapsed:", endTime-startTime, "seconds")
