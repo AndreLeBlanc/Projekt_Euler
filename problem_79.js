@@ -7,9 +7,10 @@ function keyList(){
 }
 
 function bef() {
-    var keys = keyList();
+    const keys = keyList();
+    const start = performance.now();
     var befores = [[],[],[],[],[],[],[],[],[],[]];
-    var keySplit = keys.map(i => i.split('').map(Number));
+    const keySplit = keys.map(i => i.split('').map(Number));
     for (let i = 0; i < keySplit.length; i++) {
         befores[keySplit[i][2]].push(keySplit[i][1]);
         befores[keySplit[i][2]].push(keySplit[i][0]);
@@ -19,12 +20,11 @@ function bef() {
     befores.sort(function(a, b){
         return a.length - b.length;
     })
-    return befores;
+    return { befores, start };
 }
 
 function problem_79() {
-    var start = performance.now();
-    var befores = bef();
+    const { befores, start } = bef();
     var res = [];
     for (let i = 0; i < befores.length; i++) {
         if (befores[i].length > 0) {
@@ -38,7 +38,7 @@ function problem_79() {
     }
     res.push(0);
     res = parseInt(res.join(''));
-    var finish = performance.now();
+    const finish = performance.now();
     console.log(res);
     console.log(finish-start);
 }
